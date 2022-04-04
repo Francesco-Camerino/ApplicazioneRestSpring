@@ -9,7 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 @SpringBootApplication
 public class ApplicazioneRestSpringApplication {
@@ -24,7 +26,7 @@ public class ApplicazioneRestSpringApplication {
 		SpringApplication.run(ApplicazioneRestSpringApplication.class, args);
 	}
 	/* il nostro primo bean */
-	@Bean
+	/*@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
 			logger.debug(salutoIniziale);
@@ -32,18 +34,27 @@ public class ApplicazioneRestSpringApplication {
 
 			String[] beans = ctx.getBeanDefinitionNames();
 			Arrays.sort(beans);
-			/*for (String bean : beans) {
+			*//*for (String bean : beans) {
 				logger.debug(bean);
 			}
 			for(int i = 0; i < beans.length; i++) {
 				logger.warn(beans[i]);
-			}*/
+			}*//*
 
-			for(int i = 0; i < 10; i++) {
+			*//*for(int i = 0; i < 10; i++) {
 				logger.warn(beans[i]);
-			}
+			}*//*
+			//Codice manipolazione date
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+			Date a = simpleDateFormat.parse("23-04-2021");
+			logger.info(a.toString());
+			Date oggi = new Date();
+			String oggiStringa = simpleDateFormat.format(oggi);
+			logger.info("Ciao oggi è "+oggiStringa);
+			SimpleDateFormat anno = new SimpleDateFormat("yyyy");
+			logger.info("Siamo nell'anno: "+anno.format(new Date()));
 
 		};
 	}
-
+*/
 }
