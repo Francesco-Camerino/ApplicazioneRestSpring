@@ -8,7 +8,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Configuration
@@ -46,6 +48,12 @@ public class PrimoInserimento {
 
            logger.error("Sto per fare una delete");
            repository.delete(u2);
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            Date datadinascita = dateFormat.parse("25-12-2021");
+            Utente utenteConDataDiNascita = new Utente("marco", "dell'anna",datadinascita);
+            repository.save(utenteConDataDiNascita);
+
            utentiDalDB = repository.findAll();
             for(Utente u : utentiDalDB) {
                 logger.info("Nome: "+u.getNome());
