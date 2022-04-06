@@ -8,4 +8,7 @@ import java.util.List;
 
 public interface UtentiRepository extends JpaRepository<Utente, Long> {
     List<Utente> findByDatadinascitaBetween(Date datada, Date dataa);
+    List<Utente> findByDatadiregistrazioneBetween(Date datada, Date dataa);
+    List<Utente> findByRankingBetween(float min, float max);
+    List<Utente> findByRankingLessThan(float max);
 }

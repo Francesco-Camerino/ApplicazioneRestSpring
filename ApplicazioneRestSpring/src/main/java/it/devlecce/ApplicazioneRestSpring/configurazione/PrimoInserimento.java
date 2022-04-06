@@ -54,6 +54,11 @@ public class PrimoInserimento {
             Utente utenteConDataDiNascita = new Utente("marco", "dell'anna",datadinascita);
             repository.save(utenteConDataDiNascita);
 
+            SimpleDateFormat dataNascita = new SimpleDateFormat("yyyy-MM-dd");
+            Date dataDiDavide = dataNascita.parse("2005-05-22");
+            Utente utenteConTuttiGliAttributi = new Utente("Davide","xxxx",dataDiDavide,new Date(),2.3f);
+            repository.save(utenteConTuttiGliAttributi);
+
            utentiDalDB = repository.findAll();
             for(Utente u : utentiDalDB) {
                 logger.info("Nome: "+u.getNome());

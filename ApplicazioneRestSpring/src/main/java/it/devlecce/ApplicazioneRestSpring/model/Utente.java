@@ -13,8 +13,18 @@ public class Utente {
     private String nome;
     private String cognome;
     private Date datadinascita;
+    private Date datadiregistrazione;
+    private float ranking;
 
     public Utente() {
+    }
+
+    public Utente(String nome, String cognome, Date datadinascita, Date datadiregistrazione, float ranking) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.datadinascita = datadinascita;
+        this.datadiregistrazione = datadiregistrazione;
+        this.ranking = ranking;
     }
 
     public Utente(String nome, String cognome, Date datadinascita) {
@@ -65,5 +75,21 @@ public class Utente {
 
     public void setDatadinascita(Date datadinascita) {
         this.datadinascita = datadinascita;
+    }
+
+    public Date getDatadiregistrazione() {
+        return datadiregistrazione;
+    }
+
+    public void setDatadiregistrazione(Date datadiregistrazione) {
+        this.datadiregistrazione = datadiregistrazione;
+    }
+
+    public float getRanking() {
+        return ranking;
+    }
+
+    public void setRanking(float ranking) {
+        this.ranking = ranking;
     }
 }
